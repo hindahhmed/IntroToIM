@@ -1,5 +1,5 @@
 # IntroToIM
 
-## Assignment 1 ##
+## *Assignment 1* ##
 
 ## *Febuary 1*
