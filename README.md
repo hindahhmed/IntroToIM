@@ -13,7 +13,7 @@
 1. A problem I faced was trying to make the font bold. The first time I tried, the hashtag did not work. However, after a few tries it eventually worked and I was able to make the fold bold. 
 2. While creating my self portrait, it was very difficult to find the proper skin tone, and adding little details such as the eyes and eyebrows. 
 
-![my homework] (selfportrait.jpg)
+![my homework](selfportrait.png)
 
 ### *CODE* ###
 
