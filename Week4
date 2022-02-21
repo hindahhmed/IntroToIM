@@ -1,1 +1,57 @@
+# February # 
 
+## Assignment 4 ## 
+
+## * DOCUMENTATION * ## 
+
+Link to project [https://editor.p5js.org/hindahhmed/sketches/Ra7NV6LI6] 
+
+The assignment assigned asked for some sort of data visualization, I decided to utilize the trends associated with the word 'summer' over the span of 5 years. This is because I wanted to utilisze something seasonal as the trend would keep fluctuating.
+I wanted to utilize this because I believe ot would have created an interesting piece. I changed the trend from a 'vertex' to 'ellipses' as I wanted the ellipses to look like suns, as it fit the theme of summer. The fill I chose was (60,100,100), and I had to change it from RGB to HSB to fit the code.
+For the background, I drew inpiration from what we have learned in week two, and slightly changed the colors to focus more of blue-tones to imitate a sky. The fill for the background is ((colorOffset + noise(20/ 100, j / 100, 60) * 360)%360, 70, 90). 
+
+Code: 
+
+let summer;
+let xoff = 0.0, yoff = 10000; 
+let t = 0;
+let colorOffset = 0;
+  
+function preload() {
+  summer = loadTable('summer.csv',"csv");
+  
+}
+function setup() {
+  createCanvas(300, 300);
+  print(summer.getRowCount());
+  print(summer.getColumnCount());
+  frameRate(10);
+  colorMode(HSB);
+  
+}
+
+function draw() {
+  background(51,10);
+  for(let i = 0; i < width; i+=5) {
+    for(let j = 0; j < height; j+=5) {
+      
+      fill((colorOffset + noise(20/ 100, j / 100, 60) * 360)%360, 70, 90);
+      noStroke();
+      rect(i, j, 5, 5);
+    }
+  }
+  t = t + 0.003;
+  colorOffset += 1;
+  stroke(1);
+  fill(60,100,100);
+  beginShape();
+  for(let i=3;i<summer.getRowCount();i++) {
+
+    let newYpos = map(summer.getString(i,1), 0,100,height,0);
+
+    ellipse(i,newYpos,20);
+    
+  }
+  endShape();
+  
+}
