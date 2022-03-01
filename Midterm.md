@@ -1,6 +1,6 @@
 ## MIDTERM ## 
 
-# * Progress * # 
+#*Progress*# 
 
 My game consists of a stacking game, where I will be utilizing rectangles in order to stack. The player will have to press the space bar in order to stack the rectangles on top of eachother. 
 If the triangles are not completely even, the stack will get smaller, and if balance is lost, the stack will fall over and the player will lose. 
