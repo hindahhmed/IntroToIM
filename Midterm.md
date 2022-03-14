@@ -1,4 +1,4 @@
-## MIDTERM ## 
+# MIDTERM # 
 
 Link to Project [https://editor.p5js.org/hindahhmed/full/5dcP9SwS5]
 
@@ -35,3 +35,9 @@ A callenge I faced while creating and programming the game was the scoops not be
 # *Lessons & Next Steps* # 
 
 One of the biggest lessons I learned throughout the duration of creating my game is persistance. There were many instances in which I felt as though I would not be able to complete my code because of the issues that would arise. However, I persivered and tried, and it was truly a process of trial and error to figure out what went wrong within the code. Something I will do in the future is ask for help when needed, because if I did that I believe my game would have functioned better, however, I am still proud of how it turned out. 
+
+# *References/Resources* #
+
+- Javascript 
+- P5.js
+- P5.js references 
