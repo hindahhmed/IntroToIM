@@ -14,4 +14,4 @@ Once the page is loaded, the user can press enter to start the game. Once the ga
 
 *Design Desicions*
 
-- 
+- The background of the opening page is baby pink, and the 
