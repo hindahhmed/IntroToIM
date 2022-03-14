@@ -16,4 +16,13 @@ Once the page is loaded, the user can press enter to start the game. Once the ga
 
 *Design Desicions*
 
-- The background of the opening page is baby pink, and there is a photo of a 
+- The background of the opening page is baby pink, and there is a picture of an ice cream truck. The ice cream truck was placed in order to fit the theme of the game. 
+
+- The background music, which plays throughout the entire duraring of the game, is a clip of an ice cream truck video I found on YouTube. A converter was utilized in order to turn the clip from a video to an MP3 clip. Link to clip [https://www.youtube.com/watch?v=SPWFlPfuDgo]
+
+- When a player catches a scoop, a licking sound is played. The sound was added in order to make the game more interactive and immerse the player in the game more. 
+
+- A score count was added in order to help the player keep track of their progress. 
+
+# *Challenges & Solutions* # 
+
