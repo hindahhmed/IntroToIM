@@ -16,7 +16,7 @@ Once the page is loaded, the user can press enter to start the game. Once the ga
 - I could not add a noise when the player lost, as the noise would overlap and be very loud. 
 - When the game ends, the player must refresh the page to start again. 
 
-*Design Desicions*
+*Design Desicions:*
 
 - The background of the opening page is baby pink, and there is a picture of an ice cream truck. The ice cream truck was placed in order to fit the theme of the game. 
 
