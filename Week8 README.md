@@ -2,7 +2,7 @@
 
 ## Assignment 8 ## 
 
-## * DOCUMENTATION * ## 
+##* DOCUMENTATION *## 
 
 Link to video: [https://www.youtube.com/watch?v=wLv5f4z0VW0]
 
