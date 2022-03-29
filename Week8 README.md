@@ -2,12 +2,14 @@
 
 ## Assignment 8 ## 
 
-##* DOCUMENTATION *## 
+## *DOCUMENTATION* ## 
 
 Link to video: [https://www.youtube.com/watch?v=wLv5f4z0VW0]
 
 ![](https://github.com/hindahhmed/IntroToIM/blob/main/images/IMG-3113.jpg)
 ![](https://github.com/hindahhmed/IntroToIM/blob/main/images/IMG-3114.jpg)
+![](https://github.com/hindahhmed/IntroToIM/blob/main/images/IMG-3115.jpg)
+1[](https://github.com/hindahhmed/IntroToIM/blob/main/images/IMG-3116.jpg)
 
 
 The prompt for the assignment assigned was to create a circuit with a creative switch without using our hands. This immediatly gave me the idea to create a functioning circuit utilizing a metal straw. 
