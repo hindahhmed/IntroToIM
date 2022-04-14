@@ -37,5 +37,5 @@ Overall, even though it took a lot of time and effort into this instrument it wa
 
 ![Instrument4](https://github.com/shamsasaeed/ssa8778/blob/main/4%20instrument.jpg)
 
-On Thu, Apr 14, 2022 at 10:20 PM Hind Alharmoodi <haa8259@nyu.edu> wrote:
+
 
