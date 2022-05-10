@@ -1,9 +1,0 @@
-# FINAL PROJECT #
-
-## IDEA ## 
-
-For the final project, My partner and I had the idea to create a game in which the individual must be able to loop a metal loop around a wire without touching the wire. If the wire is touched the arduino will buzz and the LED bulb will light up. The objective of the game is to not touch the wire at all. This idea will need a lot of improvement and alterning, however, this is currently the base idea. 
-
-## Execution ##
-
-As a requirement for the final project is to utilize both the arduino and P5.js, we will have to alter this idea to fit both. 
