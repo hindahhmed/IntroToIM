@@ -4,7 +4,7 @@
 
 ## Inspiration
 
-My partner Shamsa and I got inspired by a very addicting childhood game we both loved to play (we can't remember the name). In the game there were a bunch of beavers popping up in the screen where the player had to hit them to get a point. We thought that it would be really cool to try and re-create this but in real life format, which we got really excited about. We switched it up a bit by deciding to create  insects using the LEDs instead of beavers and using force sensors to destroy these insects instead of hitting them, and of course getting a point when destroying the bugs/insects on time.
+My partner Shamsa and I got inspired by a very addicting childhood game we both loved to play called "Hit the Beaver". In the game there were a bunch of beavers popping up in the screen where the player had to hit them to get a point. We thought that it would be really cool to try and re-create this but in real life format, which we got really excited about. We switched it up a bit by deciding to create  insects using the LEDs instead of beavers and using force sensors to destroy these insects instead of hitting them, and of course getting a point when destroying the bugs/insects on time.
 
 ## How Arduino And P5 Are Connected
 
