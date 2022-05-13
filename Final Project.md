@@ -40,6 +40,8 @@ if (randomChoice == 1) {
           isPressed = true;
         }
         
+ ## Code explanation:
+        
  In order to time when the LED would be low and the sensor must be pressed, we utilized millis, which was set up as the following: 
  
   startMillis = millis();  //initial start time
@@ -47,6 +49,30 @@ if (randomChoice == 1) {
   ranNum = currentMillis;
   
  Initially, the LEDs were not flashing randomly, however, we implemented the random code, and after a long process of trial and error, we were able to flas the LEDs randomly.  
+ 
+ Last minute, we decided to add a 'You Win'/'You Lose' aspect to the P5 code. After the duration of the game has ended (30 seconds), if the player gets below 2 points, 'You Lose' is printed on the screen. 
+ 
+  if (gameState == 2) {
+    image(loseImg, 0, 0, 600, 600);
+    textFont(font);
+    fill(255, 255, 255);
+    textSize(50);
+    fill("white"); // time and color text white
+    text("YOU LOSE! DOUBLECLICK TO RESTART :" + score, width / 47, height / 2);
+ 
+ 
+ However, if a player gets above 2 points 'you win' is printed on the screen. The code is as follows: 
+ 
+ 
+   if (gameState == 3) {
+    image(winImg, 0, 0, 600, 600);
+    textFont(font);
+    fill(255, 255, 255);
+    textSize(50);
+    fill("white"); // time and color text white
+    text("YOU WIN! DOUBLE CLICK TO RESTART :" + score, width / 47, height / 2);
+   
+ 
 
 ## Soldering Process: 
 
