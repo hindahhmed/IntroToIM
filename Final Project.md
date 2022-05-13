@@ -92,7 +92,7 @@ As the game concept was surrounded around a picnic, we decided to place the game
 
 # Final result output:
 
-![final show 1](not yet added
+[CLICK ME TO SEE GAME DEMO](https://youtube.com/shorts/vgvi5tsESYs?feature=share)
 
 
 
