@@ -83,6 +83,11 @@ and there was a mistake in the soldering. Due to lack of time, we decided not to
 
 In conclusion, me and my partner would have never dreamed of creating something like this on our own. The building, the soldering, the coding, the entire process was a big challenge that we overcame. Although we experienced many errors and struggles, we managed to get beyond them all and create a beautiful output that was worked very hard on. There are many things we would have liked to change or implement if we had more time, such as fixing the soldering for the final design, or adding a sound effect when the ants are being squished. However, we are bith very proud for how far we've come since starting the final, and we've learned more than we could have anticipated through this journey. 
 
+# Design: 
+
+As the game concept was surrounded around a picnic, we decided to place the game on a picnic basket on fake grass, in order to mimic a picnic. As for the ants, I made them out of hot glue, and painted them with black acrylic paint, and stuck googly eyes on them. I also hot glued flowers and filled the basket with bubble wrap for a fuller effect. I then made a sign reading 'FLASHING BUGS' and glued it to a stick, which I placed in the basket. I also make a sign which reads "PRESS THE BUG SPRAY WHEN THE ANTS LIGHT UP!" and placed that in front of the breadboard. 
+
+![design1](https://github.com/hindahhmed/IntroToIM/blob/main/images/IM%20FINAL/IMG_3708.HEIC)
 
 
 # Final result output:
