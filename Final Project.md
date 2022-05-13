@@ -47,6 +47,349 @@ In conclusion, me and my partner would have never dreamed of creating something 
 
 ![final code 1](not yet added)
 
+# P5.js
+
+let picnicImg;
+let winImg;
+let loseImg;
+let font, music;
+let force;
+let timer = 30; // time limit for game
+let score = 0;
+let gameState = 0;
+function keyPressed() {
+  if (key == " ") {
+    // important to have in order to start the serial connection!!
+    setUpSerial();
+  }
+}
+
+function doubleClicked() {
+  if (gameState==2|| gameState==3) {
+    gameState=1;
+  }
+}
+
+function readSerial(data) {
+  //READ FROM ARDUINO HERE
+  if (data == "yes" || data == "no" || data == "start game" || data == "end game"){
+    print(data)
+  }
+  if (data == "yes" && gameState == 1) {
+    score++;
+  } else if (data == "no" && gameState == 1) {
+    score--;
+  } else if (data == "start game") {
+    gameState = 1;
+  } else if (data == "end game") {
+    resetGame();
+    gameState = 0;
+  }
+}
+
+function preload() {
+  picnicImg = loadImage("assets/picnic.jpeg");
+  loseImg = loadImage("assets/lose.jpg");
+  winImg = loadImage("assets/win.jpg");
+  music = loadSound("assets/picnicmusic.mp3");
+  font = loadFont("assets/BebasNeue-Regular.ttf");
+}
+function setup() {
+  createCanvas(600, 600);
+}
+function draw() {
+  if (gameState == 1 || gameState == 0) {
+   
+    background(220);
+    image(picnicImg, 0, 0, 600, 600);
+    if (!music.isPlaying()) {
+      music.play();
+    }
+    textFont(font);
+    fill(255, 255, 255);
+    textSize(100);
+    textFont(font); // text font and size display
+    fill("white"); // time and color text white
+    text("score :" + score, width / 47, height / 2); // points display
+    textSize(25);
+    text("timer :" + timer, 255, 380); // time display
+  }
+  if (gameState == 1) {
+    if (frameCount % 60 == 0 && timer > 0) {
+      timer--;
+    } // timer set
+
+    if (timer == 0) {
+    if (score <= 0) {
+      gameState = 2;
+    }
+      else {
+        gameState = 3;
+      }
+      resetGame();
+     
+
+     
+    } // if timer became 0 then game would reset
+  }
+ 
+  if (gameState == 2) {
+    image(loseImg, 0, 0, 600, 600);
+    textFont(font);
+    fill(255, 255, 255);
+    textSize(50);
+    fill("white"); // time and color text white
+    text("YOU LOSE! DOUBLECLICK TO RESTART :" + score, width / 47, height / 2);
+   
+  }
+ 
+   if (gameState == 3) {
+    image(winImg, 0, 0, 600, 600);
+    textFont(font);
+    fill(255, 255, 255);
+    textSize(50);
+    fill("white"); // time and color text white
+    text("YOU WIN! DOUBLE CLICK TO RESTART :" + score, width / 47, height / 2);
+   
+  }
+  // if (!serialActive) {
+  //   text("", 20, 30);
+  // }
+}
+
+function resetGame() {
+  timer = 30; // when game resets time goes back to 5 seconds
+  score = 0; // when game resets poiints goes back to 0
+}
+
+# ARDUINO 
+
+const int buttonPin = 12;     // pushbutton pin number
+const int ledPin1 =  5;      // LED pin number
+const int ledPin2 =  6;      // LED pin number
+const int ledPin3 =  7;      // LED pin number
+const int ledPin4 =  8;      // LED pin number
+const int ledPin5 =  9;      // LED pin number
+const int forcePin1 = A3;
+const int forcePin2 = A0;
+const int forcePin3 = A2;
+const int forcePin4 = A1;
+const int forcePin5 = A4;
+int  ranNum;
+int  ranDel;
+int startMillis;
+int currentMillis;
+int score = 0;
+int timer = 0;
+
+
+// variables declare:
+int buttonState = 0;         // pushbutton state variable
+int preButtonState;
+
+void setup() {
+
+  startMillis = millis();  //initial start time
+  currentMillis = startMillis;
+  ranNum = currentMillis;
+
+  Serial.begin(9600);
+  //  pinMode(2, OUTPUT);
+  //  pinMode(5, OUTPUT);
+  //  // start the handshake
+  //  while (Serial.available() <= 0) {
+  //    Serial.println("0,0"); // send a starting message
+  //    delay(300);            // wait 1/3 second
+  ////  }
+
+  // LED pin output:
+  pinMode(ledPin1, OUTPUT);
+  // pushbutton pin input:
+  pinMode(buttonPin, INPUT);
+
+  pinMode(ledPin2, OUTPUT);
+  // pushbutton pin input:
+  pinMode(buttonPin, INPUT);
+
+  pinMode(ledPin3, OUTPUT);
+  // pushbutton pin input:
+  pinMode(buttonPin, INPUT);
+
+  pinMode(ledPin4, OUTPUT);
+  // pushbutton pin input:
+  pinMode(buttonPin, INPUT);
+
+  pinMode(ledPin5, OUTPUT);
+  // pushbutton pin input:
+  pinMode(buttonPin, INPUT);
+  preButtonState = digitalRead(buttonPin);
+}
+
+void loop() {
+
+  // pushbutton value state
+  buttonState = digitalRead(buttonPin);
+
+  digitalWrite(ledPin1, HIGH);
+  digitalWrite(ledPin2, HIGH);
+  digitalWrite(ledPin3, HIGH);
+  digitalWrite(ledPin4, HIGH);
+  digitalWrite(ledPin5, HIGH);
+
+  //  if pushbutton is pressed then thebuttonState is HIGH:
+  if (buttonState == HIGH) {
+    if (preButtonState == LOW) {
+      Serial.println("start game");
+      preButtonState = HIGH;
+    }
+    bool isPressed = false;
+    bool wrongPress = false;
+    startMillis = millis();
+    currentMillis = startMillis;
+    //  Serial.println(score);
+    int randomChoice = random(1, 6);
+    //  Serial.print("Choice : ");
+    //  Serial.println(randomChoice);
+    //
+    //    Serial.print(analogRead(forcePin1));
+    //    Serial.print(",");
+    //    Serial.print(analogRead(forcePin2));
+    //    Serial.print(",");
+    //     Serial.print(analogRead(forcePin3));
+    //    Serial.print(",");
+    //     Serial.print(analogRead(forcePin4));
+    //    Serial.print(",");
+    //     Serial.println(analogRead(forcePin5));
+    ////    Serial.print(",");
+
+    while (currentMillis - startMillis < 2000) {
+
+      // do this for each led
+      if (randomChoice == 1) {
+        digitalWrite(ledPin4, LOW);
+        if (analogRead(forcePin4) > 500) {
+          isPressed = true;
+        }
+
+      }
+      if (randomChoice == 2) {
+        digitalWrite(ledPin2, LOW);
+        if (analogRead(forcePin2) > 500) {
+          isPressed = true;
+        }
+
+      }
+      if (randomChoice == 3) {
+        digitalWrite(ledPin3, LOW);
+        if (analogRead(forcePin3) > 500) {
+          isPressed = true;
+        }
+      }
+      if (randomChoice == 4) {
+        digitalWrite(ledPin4, LOW);
+        if (analogRead(forcePin4) > 500) {
+          isPressed = true;
+        }
+      }
+
+      if (randomChoice == 5) {
+        digitalWrite(ledPin5, LOW);
+        if (analogRead(forcePin5) > 500) {
+          isPressed = true;
+        }
+      }
+
+      currentMillis = millis();
+
+
+      if (randomChoice == 2 && (analogRead(forcePin1) > 500 || analogRead(forcePin3) > 500) || analogRead(forcePin4) > 500 || analogRead(forcePin5) > 500) {
+        wrongPress = true;
+      }
+
+      if (randomChoice == 1 && (analogRead(forcePin2) > 500 || analogRead(forcePin3) > 500) || analogRead(forcePin4) > 500 || analogRead(forcePin5) > 500) {
+        wrongPress = true;
+      }
+
+      if (randomChoice == 3 && (analogRead(forcePin1) > 500 || analogRead(forcePin2) > 500) || analogRead(forcePin4) > 500 || analogRead(forcePin5) > 500) {
+        wrongPress = true;
+      }
+
+      if (randomChoice == 4 && (analogRead(forcePin1) > 500 || analogRead(forcePin3) > 500) || analogRead(forcePin2) > 500 || analogRead(forcePin5) > 500) {
+        wrongPress = true;
+      }
+
+      if (randomChoice == 5 && (analogRead(forcePin1) > 500 || analogRead(forcePin3) > 500) || analogRead(forcePin4) > 500 || analogRead(forcePin2) > 500) {
+        wrongPress = true;
+      }
+    }
+
+    if (isPressed == true) {
+      Serial.println("yes");
+
+    } else if (wrongPress == true) {
+      Serial.println("no");
+    }
+
+  }
+ 
+  else {
+    if (preButtonState == HIGH) {
+      Serial.println("end game");
+      preButtonState = LOW;
+    }
+    // LED ON:
+    digitalWrite(ledPin1, HIGH);
+    digitalWrite(ledPin2, HIGH);
+    digitalWrite(ledPin3, HIGH);
+    digitalWrite(ledPin4, HIGH);
+    digitalWrite(ledPin5, HIGH);
+    score = 0;
+  }
+
+
+
+  //  // NEW ATTEMPT
+
+  //
+  //  if (randomChoice == 2) {
+  //    digitalWrite(ledPin2, HIGH);
+  //    if (analogRead(forcePin2) < 500) {
+  //      score--;
+  //    }
+  //  }
+  //  if (randomChoice == 3) {
+  //    digitalWrite(ledPin1, HIGH);
+  //    if (analogRead(forcePin1) < 500) {
+  //      score--;
+  //    }
+  //  }
+  //
+  //  if (randomChoice == 4) {
+  //    digitalWrite(ledPin4, HIGH);
+  //    if (analogRead(forcePin4) < 500) {
+  //      score--;
+  //    }
+  //  }
+  //
+  //  if (randomChoice == 5) {
+  //    digitalWrite(ledPin5, HIGH);
+  //    if (analogRead(forcePin5) < 500) {
+  //      score--;
+  //    }
+  //  }
+
+  //  digitalWrite(ledPin1, HIGH);
+  //  digitalWrite(ledPin2, HIGH);
+  //  digitalWrite(ledPin3, HIGH);
+  //  digitalWrite(ledPin4, HIGH);
+  //  digitalWrite(ledPin5, HIGH);
+
+  //serial send to p5
+
+
+
+}
+
 
 # References
 
