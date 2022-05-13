@@ -12,15 +12,18 @@ In the Arduino, we have set up the game on the board and this will include five 
 
 ## Summary concept of the Game:
 
-For the game, the player has to press the button for the game to begin. When the button is pressed, the LED lights will start blinking. The player would then have to touch the force sensors on time where the LED is turned on, and when the player has done so, he or she will have a point.
-
-## A challenging concept we couldn't cover:
+For the game, the player has to flip the switch for the game to begin. When the switch is flipped, the LED lights will turn on. The player would then have to touch the force sensors on time where the LED is turned off, and when the player has done so, they will have a point. However, if the player presses a sensor for an LED that is on, a point will be deducted. 
 
 
 ## Some important contributers we used in our Arduino board and both codes:
 
-- LEDs, Button, Force Sensors, Resistors, Wires.
-- If Statements, Loops
+- LEDs
+- Button/Switch 
+- Force Sensors
+- Resistors
+- Wires.
+- If Statements
+- Loops
 
 ## Coding proccess:
 
@@ -29,11 +32,30 @@ However, once we had our circuit working we started working with the rest of the
 
 ## Hardships during coding process:
 
-We have faced many hardships during the coding process. The first issue was that we had countless errors that said that the port was not connected to the Arduino which we had to adjust multiple times.
+We have faced many hardships during the coding process. The first issue was that we had countless errors that said that the port was not connected to the Arduino which we had to adjust multiple times, through finding the correct port and connecting it. Moreover, our sensors did not work, the hqrdwiring was correct, however, the code itself was not working. Through asking for help from the Professor, we were able to connect the sensors to the LED, and create a point system in which when the LED was low and the sensor was pressed, the player would get a point. We checked in the sensors were working through serial montering and checking the numbers. We utilized 0s and 1s to monitor this. If the sensor was pressed and a 1 was printed, we were able to see that it works. The code for the sensors is:
+
+if (randomChoice == 1) {
+        digitalWrite(ledPin4, LOW);
+        if (analogRead(forcePin4) > 500) {
+          isPressed = true;
+        }
+        
+ In order to time when the LED would be low and the sensor must be pressed, we utilized millis, which was set up as the following: 
+ 
+  startMillis = millis();  //initial start time
+  currentMillis = startMillis;
+  ranNum = currentMillis;
+  
+ Initially, the LEDs were not flashing randomly, however, we implemented the random code, and after a long process of trial and error, we were able to flas the LEDs randomly.  
+
+## Soldering Process: 
+
+Initially, we wanted to solder the game for a cleaner final product. However, we faced many hardships during this process. When soldering, some wires were loose and because of this, a short circuit was created as the lose wires were touching other wires. This was brought to our attention as when we went to connect the arduino to the laptop and run the code, the arduino would not turn. We tried multipul techniques to fix this, such as restarting the laptop, however, it did not work. Moreover, we soon came to discover that the positive and negatives (ground and 5 volts) were connected together. We learned what connection it was utilizing a multimeter. After detecting this, we re-soldered the wires and there was no longer a short circuit. When when re-connected the laptop, the arduino turned on, however, only one LED (out of the 5) was high. This proved that the LED connections were not soldered properly w
+and there was a mistake in the soldering. Due to lack of time, we decided not to present out soldered board in the final showcase and present our regular breadboard connection, which worked out in our favor, as the game was fully functioning with no errors. 
 
 # Conclusion:
 
-In conclusion, me and my partner would have never dreamed of creating something like this on our own. The building, the soldering, the coding, the entire process was a big challenge that we overcame. Even though we went through many confusions, errors, and struggles, we managed to get beyond them all and create a beautiful output that was worked very hard on.
+In conclusion, me and my partner would have never dreamed of creating something like this on our own. The building, the soldering, the coding, the entire process was a big challenge that we overcame. Although we experienced many errors and struggles, we managed to get beyond them all and create a beautiful output that was worked very hard on. There are many things we would have liked to change or implement if we had more time, such as fixing the soldering for the final design, or adding a sound effect when the ants are being squished. However, we are bith very proud for how far we've come since starting the final, and we've learned more than we could have anticipated through this journey. 
 
 
 
@@ -389,8 +411,3 @@ void loop() {
 
 
 }
-
-
-# References
-
-not yet added
