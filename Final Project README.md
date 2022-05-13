@@ -4,7 +4,7 @@
 
 ## Inspiration and Game Concept
 
-My partner Shamsa and I got inspired by a very addicting childhood game we both loved to play called "Hit the Beaver". In the game there were a bunch of beavers popping up in the screen where the player had to hit them to get a point. We thought that it would be really cool to try and re-create this but in real life format, which we got really excited about. We switched it up a bit by deciding to create insects using the LEDs instead of beavers and using force sensors to spray the bugs instead of hitting them, and of course getting a point when destroying the bugs on time. Finding an idea that interests the both of us took a while but once we came across this game idea we thought that was the one, and even though we knew that creating this complex idea would be challenging, we decided to accept whatever difficulty we would face. We started without  any second thoughts, we believed that we could do it.
+My partner Hind and I got inspired by a very addicting childhood game we both loved to play called "Hit the Beaver". In the game there were a bunch of beavers popping up in the screen where the player had to hit them to get a point. We thought that it would be really cool to try and re-create this but in real life format, which we got really excited about. We switched it up a bit by deciding to create insects using the LEDs instead of beavers and using force sensors to spray the bugs instead of hitting them, and of course getting a point when destroying the bugs on time. Finding an idea that interests the both of us took a while but once we came across this game idea we thought that was the one, and even though we knew that creating this complex idea would be challenging, we decided to accept whatever difficulty we would face. We started without  any second thoughts, we believed that we could do it.
 
 ## How Arduino And P5 Are Connected
 
@@ -146,6 +146,7 @@ In conclusion, me and my partner would have never dreamed of creating something 
 # Final Result Game DEMO:
 
 [CLICK ME TO SEE GAME DEMO IN CLASS SHOW](https://youtube.com/shorts/vgvi5tsESYs?feature=share)
+[CLICK ME TO SEE GAME DEMO IN CLASS SHOW2](https://youtube.com/shorts/Mbaq752WbtE?feature=share)
 
 # CODE: P5.js
 
